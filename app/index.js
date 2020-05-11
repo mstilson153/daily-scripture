@@ -1,6 +1,7 @@
 // Import the messaging module
 import * as messaging from "messaging";
 import document from "document";
+//import * as fs from "fs";
 
 let versetext = document.getElementById("verse");
 

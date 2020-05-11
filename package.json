@@ -5,7 +5,8 @@
   "license": "UNLICENSED",
   "devDependencies": {
     "@fitbit/sdk": "~4.1.0",
-    "@fitbit/sdk-cli": "^1.7.1"
+    "@fitbit/sdk-cli": "^1.7.1",
+    "eslint": "^7.0.0"
   },
   "fitbit": {
     "appUUID": "28750ddd-8d58-43ca-a719-4695e83d957d",
@@ -23,5 +24,6 @@
   "scripts": {
     "build": "fitbit-build",
     "debug": "fitbit"
-  }
+  },
+  "dependencies": {}
 }
