@@ -1,7 +1,7 @@
 // Import the messaging module
 import * as messaging from "messaging";
 import document from "document";
-//import * as fs from "fs";
+import * as fs from "fs";
 
 let versetext = document.getElementById("verse");
 
@@ -21,24 +21,35 @@ function processVerseData(data) {
   versetext.text = data;
 }
 
-// Listen for the onopen event
-messaging.peerSocket.onopen = function() {
-  // Fetch weather when the connection opens
-  fetchVerse();
-}
-
-// Listen for messages from the companion
-messaging.peerSocket.onmessage = function(evt) {
-  if (evt.data) {
-    processVerseData(evt.data);
+function recieveData() {
+  console.log("Begin Companion messaging.");
+  // Listen for the onopen event
+  messaging.peerSocket.onopen = function() {
+    // Fetch weather when the connection opens
+    fetchVerse();
   }
+
+  // Listen for messages from the companion
+  messaging.peerSocket.onmessage = function(evt) {
+    if (evt.data) {
+      processVerseData(evt.data);
+    }
+  }
+
+  // Listen for the onerror event
+  messaging.peerSocket.onerror = function(err) {
+    // Handle any errors
+    console.log("Connection error: " + err.code + " - " + err.message);
+  }
+
+  // Fetch the weather every 30 minutes
+  setInterval(fetchVerse, 30 * 1000 * 60);
 }
 
-// Listen for the onerror event
-messaging.peerSocket.onerror = function(err) {
-  // Handle any errors
-  console.log("Connection error: " + err.code + " - " + err.message);
+if (fs.existsSync("/private/data/verse.txt")) {
+  console.log("file exists!");
+  recieveData();
+} else {
+  console.log("file does not exist!")
+  recieveData();
 }
-
-// Fetch the weather every 30 minutes
-setInterval(fetchVerse, 30 * 1000 * 60);
