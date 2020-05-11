@@ -1,0 +1,12 @@
+.background {
+  viewport-fill: fb-cyan;
+}
+
+#verse {
+  color: white;
+  font-size: 24;
+  font-family: System-Regular;
+  text-anchor: middle;
+  display-align: center;
+  text-length: 300;
+}

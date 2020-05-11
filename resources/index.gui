@@ -1,0 +1,5 @@
+<svg class="background">
+  <image width="300" height="300" href="background.png" />
+  <textarea id="verse" x="5" y="5" width="100%-10"
+    font-family="System-Regular" fill="white" font-size="24">Verse not loaded yet!</textarea>
+</svg>
