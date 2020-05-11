@@ -5,7 +5,7 @@ import document from "document";
 let versetext = document.getElementById("verse");
 
 // Request weather data from the companion
-function fetchWeather() {
+function fetchVerse() {
   if (messaging.peerSocket.readyState === messaging.peerSocket.OPEN) {
     // Send a command to the companion
     messaging.peerSocket.send({
@@ -15,7 +15,7 @@ function fetchWeather() {
 }
 
 // Display the weather data received from the companion
-function processWeatherData(data) {
+function processVerseData(data) {
   console.log("Verse of the day is: " + data);
   versetext.text = data;
 }
@@ -23,13 +23,13 @@ function processWeatherData(data) {
 // Listen for the onopen event
 messaging.peerSocket.onopen = function() {
   // Fetch weather when the connection opens
-  fetchWeather();
+  fetchVerse();
 }
 
 // Listen for messages from the companion
 messaging.peerSocket.onmessage = function(evt) {
   if (evt.data) {
-    processWeatherData(evt.data);
+    processVerseData(evt.data);
   }
 }
 
@@ -40,4 +40,4 @@ messaging.peerSocket.onerror = function(err) {
 }
 
 // Fetch the weather every 30 minutes
-setInterval(fetchWeather, 30 * 1000 * 60);
+setInterval(fetchVerse, 30 * 1000 * 60);

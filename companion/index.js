@@ -14,7 +14,7 @@ function queryOurmana() {
         // Print verse
         console.log("Verse is: " + verse);
         // Send the weather data to the device
-        returnWeatherData(verse);
+        returnVerseData(verse);
       });
   })
   .catch(function (err) {
@@ -23,7 +23,7 @@ function queryOurmana() {
 }
 
 // Send the weather data to the device
-function returnWeatherData(data) {
+function returnVerseData(data) {
   if (messaging.peerSocket.readyState === messaging.peerSocket.OPEN) {
     // Send a command to the device
     messaging.peerSocket.send(data);
