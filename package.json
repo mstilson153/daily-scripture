@@ -14,7 +14,9 @@
     "appDisplayName": "Verse Of The Day",
     "iconFile": "resources/icon.png",
     "wipeColor": "#ffffff",
-    "requestedPermissions": [],
+    "requestedPermissions": [
+      "access_internet"
+    ],
     "buildTargets": [
       "mira"
     ],

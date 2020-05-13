@@ -1,5 +1,10 @@
 // Import the messaging module
 import * as messaging from "messaging";
+import { me as companion } from "companion";
+
+if (!companion.permissions.granted("access_internet")) {
+  console.log("We're not allowed to access the internet!");
+}
 
 var ENDPOINT = "https://www.ourmanna.com/verses/api/get/?format=text";
 
@@ -30,6 +35,10 @@ function returnVerseData(data) {
   } else {
     console.log("Error: Connection is not open");
   }
+}
+
+if (!companion.permissions.granted("access_internet")) {
+  console.log("We're not allowed to access the internet!");
 }
 
 // Listen for messages from the device
