@@ -1,24 +1,26 @@
 {
-  "name": "verse-of-the-day",
-  "version": "0.1.0",
+  "name": "daily-scripture",
+  "version": "1.0.0",
   "private": true,
-  "license": "UNLICENSED",
+  "license": "GPLv3",
   "devDependencies": {
-    "@fitbit/sdk": "~4.1.0",
+    "@fitbit/sdk": "~4.2.1",
     "@fitbit/sdk-cli": "^1.7.1",
     "eslint": "^7.0.0"
   },
   "fitbit": {
     "appUUID": "28750ddd-8d58-43ca-a719-4695e83d957d",
     "appType": "app",
-    "appDisplayName": "Daily Verse",
+    "appDisplayName": "Daily Scripture",
     "iconFile": "resources/icon.png",
     "wipeColor": "#ffffff",
     "requestedPermissions": [
       "access_internet"
     ],
     "buildTargets": [
-      "mira"
+      "mira",
+      "meson",
+      "gemini"
     ],
     "i18n": {},
     "defaultLanguage": "en-US"
