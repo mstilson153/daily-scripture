@@ -5,7 +5,7 @@
   "license": "GPLv3",
   "devDependencies": {
     "@fitbit/sdk": "~4.2.1",
-    "@fitbit/sdk-cli": "^1.7.1",
+    "@fitbit/sdk-cli": "^1.7.3",
     "eslint": "^7.0.0"
   },
   "fitbit": {
