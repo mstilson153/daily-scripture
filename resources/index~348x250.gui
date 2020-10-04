@@ -1,6 +1,8 @@
 <svg class="background">
-  <rect x="45%" y="0" width="24" height="100%" fill="#252023" />
-  <rect x="20%" y="20%" width="60%" height="24" fill="#252023" />
+  <svg x="10%" y="10%" width="80%" height="80%" fill="#373636">
+    <rect x="45%" y="0" width="24" height="100%" fill="#252023" />
+    <rect x="24%" y="20%" width="52%" height="24" fill="#252023" />
+  </svg>
   <textarea id="verse" x="5" y="5" width="100%-10"
     font-family="System-Regular" fill="white" font-size="24">Verse not loaded yet!</textarea>
 </svg>
